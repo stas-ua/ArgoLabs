@@ -1,8 +1,10 @@
 
 package newpackage;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Queue;
 
 
 public class BST {
@@ -212,6 +214,27 @@ public class BST {
             }        
         }
         return arrTbl;
+    }
+    
+    public void Traversal()
+    {
+        Node curNode;
+        Queue<Node> queue = new LinkedList();
+        queue.add(root);
+        while (!queue.isEmpty())
+        {
+            curNode = queue.remove();
+            System.out.println(curNode);
+            
+            if(curNode.left!=null)
+                queue.add(curNode);
+            if(curNode.right!=null)
+                queue.add(curNode);
+            
+            
+        }
+        
+        
     }
     
 //    private List<List> GetArr2(){
