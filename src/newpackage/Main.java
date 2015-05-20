@@ -31,6 +31,7 @@ public class Main {
         System.out.println(bst.get("a"));
          System.out.println(" printByLevel: ");
         bst.printByLevel();
+        bst.Traversal();
 
     }
 

@@ -221,17 +221,24 @@ public class BST {
         Node curNode;
         Queue<Node> queue = new LinkedList();
         queue.add(root);
+        int isEq;
         while (!queue.isEmpty())
         {
             curNode = queue.remove();
-            System.out.println(curNode);
+            System.out.print(curNode.key+ "");
+            if(queue.peek()!=null)
+            {
+                isEq = curNode.key.compareTo(queue.peek().key );
+                if (isEq > 0 || curNode.right==queue.peek()||queue.peek()==null)
+                    System.out.println();
+            }else if(curNode.left!=null || curNode.left!=null)
+                System.out.println();
+            
             
             if(curNode.left!=null)
-                queue.add(curNode);
+                queue.add(curNode.left);
             if(curNode.right!=null)
-                queue.add(curNode);
-            
-            
+                queue.add(curNode.right);           
         }
         
         
