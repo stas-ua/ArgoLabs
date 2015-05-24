@@ -151,8 +151,18 @@ public class BST {
         return obj;
     }
 
-    public void print(){
-            print(root);
+    public void print(int m){
+        switch (m){
+                case 1:
+                    print(root); 
+                    break;
+                case 2:
+                    print2(root); 
+                    break;
+                case 3:
+                    print3(root); 
+                    break;
+        }
     }
 
     private void print(Node obj){
@@ -161,6 +171,22 @@ public class BST {
             print(obj.left);
             System.out.println(obj.key);
             print (obj.right);
+        }
+    }
+    private void print2(Node obj){
+        if(obj!=null)
+        {
+            System.out.println(obj.key);
+            print(obj.left);            
+            print (obj.right);
+        }
+    }
+    private void print3(Node obj){
+        if(obj!=null)
+        {            
+            print(obj.left);            
+            print (obj.right);
+            System.out.println(obj.key);
         }
     }
     
@@ -225,7 +251,7 @@ public class BST {
         while (!queue.isEmpty())
         {
             curNode = queue.remove();
-            System.out.print(curNode.key+ "");
+            System.out.print(curNode.key+ " ");
             if(queue.peek()!=null)
             {
                 isEq = curNode.key.compareTo(queue.peek().key );
@@ -243,41 +269,6 @@ public class BST {
         
         
     }
-    
-//    private List<List> GetArr2(){
-//        List<List> arrTbl = new ArrayList() ;
-//        //List<Node> arrRow;// = new ArrayList() ;
-//        ListIterator<List>  itr = arrTbl.listIterator();
-//        //arrTbl.add(new ArrayList<Node>());
-//        Node obj = root;
-//        int i = 0;
-//        
-//        while(obj!=null){
-//            if (obj!=null){
-//                arrTbl.add(new ArrayList<Node>());
-//                itr.next().add(obj);
-//                obj = obj.left;
-//            }else
-//            {
-// 
-//     
-//            if (obj.left!=null)
-//            {
-//                obj = obj.left;                
-//            }else if(obj.right!=null)
-//            {
-//                obj = obj.right;                
-//            }else {                
-//                itr.previous();
-//            }        
-//        }
-//        return null;
-//    }
-   // private void addNode(ArrayList<ArrayList> a1, ArrayList<Node> a2, Node obj, int n ){
-   //    if  
-        
-   // }
-
     
 //	private Node ceiling(Node obj, String key, int q){
 //		if (obj==null) return null;		
