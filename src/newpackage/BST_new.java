@@ -5,13 +5,17 @@
  */
 
 package newpackage;
+import newpackage.func.ISpecialFunc;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
-public  class BST_new <T1 extends Comparable<T1>, T2 extends ISpecialFunc>  {
+public  class BST_new <T1 extends Comparable<T1>, T2>  {
         
     private Node<T1, T2> root;
-     
+    
+    public List<ISpecialFunc<BST_new, T2>> FuncList = new LinkedList(); 
+    
     private class Node<T1, T2> {
             public T1 key;
             public T2 value;
@@ -143,7 +147,9 @@ public  class BST_new <T1 extends Comparable<T1>, T2 extends ISpecialFunc>  {
         if(obj!=null)
         {
             TraversalIn(obj.left);
-            obj.value.SpecFunc();
+            for(ISpecialFunc f : FuncList){
+                f.SpecFunc(this, obj.value);
+            }           
             TraversalIn (obj.right);
         }
     }
@@ -151,7 +157,9 @@ public  class BST_new <T1 extends Comparable<T1>, T2 extends ISpecialFunc>  {
     private void TraversalPre(Node<T1, T2> obj){
         if(obj!=null)
         {
-            obj.value.SpecFunc();
+            for(ISpecialFunc f : FuncList){
+                f.SpecFunc(this, obj.value);
+            } 
             TraversalPre(obj.left);            
             TraversalPre (obj.right);
         }
@@ -161,7 +169,9 @@ public  class BST_new <T1 extends Comparable<T1>, T2 extends ISpecialFunc>  {
         {            
             TraversalPost(obj.left);            
             TraversalPost (obj.right);
-            obj.value.SpecFunc();
+            for(ISpecialFunc f : FuncList){
+                f.SpecFunc(this, obj.value);
+            } 
         }
     }
      
@@ -174,7 +184,9 @@ public  class BST_new <T1 extends Comparable<T1>, T2 extends ISpecialFunc>  {
         while (!queue.isEmpty())
         {
             curNode = queue.remove();
-            curNode.value.SpecFunc();
+            for(ISpecialFunc f : FuncList){
+               f.SpecFunc(this, curNode.value);
+            } 
 //            if(queue.peek()!=null)
 //            {
 //                isEq = curNode.key.compareTo(queue.peek().key );

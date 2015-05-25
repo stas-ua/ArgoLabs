@@ -3,12 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package newpackage;
+package newpackage.func;
 
-/**
- *
- * @author admin
- */
-public interface ISpecialFunc {
-    public void SpecFunc();
+public interface ISpecialFunc<T1, T2> 
+{
+
+    /**
+     *
+     * @param t1
+     * @param t2
+     */
+    public void SpecFunc(T1 t1,T2 t2);
 }
