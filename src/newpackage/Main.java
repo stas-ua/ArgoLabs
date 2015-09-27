@@ -53,42 +53,8 @@ public class Main {
      System.out.println();
      System.out.println("Print all st-'s ");
      System.out.println("id - Name - LastName - year - isArmy");
-     bstn.Traversal(BST_new.TraversalType.By_level);
-       
-//        BST bst = new BST();
-//        System.out.println("размер " + bst.size());
-//        bst.put("k", "value k");
-//        bst.put("b", "value b");
-//        bst.put("a", "value a");
-//        bst.put("r", "value r");
-//        bst.put("l", "value l");
-//        bst.put("m", "value m");
-//        bst.put("z", "value z");
-//        bst.put("e", "value e");
-//        bst.put("f", "value f");
-//        bst.put("s", "value s");
-//        bst.put("t", "value t");
-//        bst.put("d", "value d");
-//        System.out.println("bst.print(1)");
-//        bst.print(1);
-//        System.out.println("bst.print(2)");
-//        bst.print(2);
-//        System.out.println("bst.print(3)");
-//        bst.print(3);
-//        System.out.println("размер " + bst.size());
-//        bst.delete("z");
-//        System.out.println(" ");
-//        bst.print(1);
-//        System.out.println("размер " + bst.size());
-//        System.out.println(bst.get("a"));
-//        System.out.println(bst.get("a"));
-//         System.out.println(" printByLevel: ");
-//        bst.printByLevel();
-//        System.out.println(" printByLevel2: ");
-//        bst.Traversal();
-//        
-//        
-//
+     bstn.Traversal(BST_new.TraversalType.By_level);       
+
    }
 
 }
